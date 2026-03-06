@@ -19,7 +19,7 @@ public class UserController {
     }
 
     //When a user types ://yourwebsite.com into their browser address bar, this method is triggered.
-    //the use GETS the signup page
+    //the user GETS the signup page
 
     // /signup is just URL(web addresses). example: localhost:8080/signup
     @GetMapping("/signup")
