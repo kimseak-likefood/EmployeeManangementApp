@@ -21,6 +21,6 @@ public class DashBoardController {
         model.addAttribute("totalDepartments", deptService.findAll().size());
         model.addAttribute("recentEmployees", empService.findAll()
                 .stream().limit(5).toList());
-        return "dashboard";
+        return "DashBoard";
     }
 }
