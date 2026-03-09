@@ -88,7 +88,8 @@
                 <option th:each="dept : ${departments}"
                         th:value="${dept.id}"
                         th:text="${dept.name}"
-                        th:selected="${employee.department != null and employee.department.id == dept.id}">
+                        th:selected="${employee.department != null
+                           and employee.department.id == dept.id}">
                 </option>
               </select>
             </div>
