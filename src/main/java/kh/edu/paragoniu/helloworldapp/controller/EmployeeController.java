@@ -61,7 +61,7 @@ public class EmployeeController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id, RedirectAttributes ra) {
         empService.deleteById(id);
-        ra.addFlashAttribute("success", "Employee deleted!");
+        ra.addFlashAttribute("success", "Employee deleted successfully!");
         return "redirect:/employees";
     }
 

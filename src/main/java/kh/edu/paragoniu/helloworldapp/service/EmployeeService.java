@@ -19,7 +19,8 @@ public class EmployeeService {
     }
 
     public Employee findById(Long id) {
-        return repo.findById(id).orElseThrow();
+        return repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
     }
 
     public void save(Employee e) {
