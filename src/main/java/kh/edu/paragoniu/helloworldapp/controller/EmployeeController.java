@@ -42,6 +42,7 @@ public class EmployeeController {
     public String editForm(@PathVariable Long id, Model model) {
         model.addAttribute("employee", empService.findById(id));
         model.addAttribute("departments", deptService.findAll());
+        model.addAttribute("activePage", "employees");
         return "employees/form";
     }
 
