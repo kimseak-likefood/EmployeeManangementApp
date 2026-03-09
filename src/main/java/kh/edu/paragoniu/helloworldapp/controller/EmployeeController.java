@@ -70,4 +70,5 @@ public class EmployeeController {
         model.addAttribute("employee", empService.findById(id));
         return "employees/detail";
     }
+
 }

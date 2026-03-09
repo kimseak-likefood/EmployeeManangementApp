@@ -19,6 +19,7 @@ public class DashBoardController {
     public String dashboard(Model model) {
         model.addAttribute("totalEmployees", empService.findAll().size());
         model.addAttribute("totalDepartments", deptService.findAll().size());
+        model.addAttribute("activeEmployees", empService.countActiveEmployees());
         model.addAttribute("recentEmployees", empService.findAll()
                 .stream().limit(5).toList());
         return "DashBoard";
