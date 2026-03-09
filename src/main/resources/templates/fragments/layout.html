@@ -19,7 +19,7 @@
             .sidebar {
                 min-height: 100vh; /* stretch full screen no matter how tall*/
                 background: #212529;
-                width: 240px;
+                width: 200px;
                 position: fixed;
                 top: 0; left: 0; /* make sidebar at top left corner*/
                 z-index: 100; /* stay on top of other content*/
@@ -48,7 +48,7 @@
             .sidebar .nav-link i { margin-right: .5rem; }
 
             .main-content {
-                margin-left: 240px;
+                margin-left: 200px;
                 padding: 2rem;
             }
 
@@ -113,33 +113,7 @@
         <!--scripts-->
         <div th:fragment = "scripts">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-            <script>
-                const sidebar     = document.getElementById('sidebar');
-                const mainContent = document.querySelector('.main-content');
 
-                // ── Restore saved state on every page load ───────────
-                // localStorage persists across pages so sidebar stays
-                // collapsed even after navigating to a different page
-                (function restoreState() {
-                    if (localStorage.getItem('sidebarCollapsed') === 'true') {
-                        sidebar.classList.add('collapsed');
-                        mainContent.classList.add('expanded');
-                    }
-                })();
-
-                // ── Toggle function called by the button ─────────────
-                function toggleSidebar() {
-                    // toggle() adds the class if missing, removes if present
-                    // and returns true if class was ADDED (now collapsed)
-                    const isNowCollapsed = sidebar.classList.toggle('collapsed');
-
-                    // Move main content left or right to match sidebar width
-                    mainContent.classList.toggle('expanded', isNowCollapsed);
-
-                    // Save state so it survives page navigation
-                    localStorage.setItem('sidebarCollapsed', isNowCollapsed);
-                }
-            </script>
         </div>
     </body>
 </html>
