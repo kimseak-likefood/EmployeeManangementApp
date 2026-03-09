@@ -5,11 +5,13 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Data //Lombok automatically generate getter and setter
+@ToString(exclude = "employees")
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "departments")
