@@ -17,7 +17,7 @@ public class DepartmentService {
     private DepartmentRepository departmentRepository;
 
     public List<Department> findAll() { return departmentRepository.findAll(); }
-    public Department findById(Long id) { return departmentRepository.findById(id).orElse(null); }
+    public Department findById(Long id) { return departmentRepository.findById(id).orElseThrow(() -> new RuntimeException("Department not found: " + id)); }
     public void save(Department d) { departmentRepository.save(d); }
     public void deleteById(Long id) { departmentRepository.deleteById(id); }
 }

@@ -33,6 +33,13 @@ public class DepartmentController {
         return "departments/form";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editForm(@PathVariable Long id, Model model) {
+        model.addAttribute("department", service.findById(id));
+        model.addAttribute("activePage", "departments");
+        return "departments/form";
+    }
+
     @PostMapping("/save")
     //This is triggered when the user clicks the "Submit" button on your HTML form.
     // (Your HTML form must have method="post" and action="/adduser").
