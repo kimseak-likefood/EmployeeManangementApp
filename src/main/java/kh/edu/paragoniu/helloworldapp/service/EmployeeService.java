@@ -24,6 +24,7 @@ public class EmployeeService {
     }
 
     public void save(Employee e) {
+
         if (e.getStatus() == null || e.getStatus().isEmpty()) {
             e.setStatus("Active");
         }

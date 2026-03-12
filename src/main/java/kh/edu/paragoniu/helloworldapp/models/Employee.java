@@ -2,8 +2,7 @@ package kh.edu.paragoniu.helloworldapp.models;
 
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -43,14 +42,21 @@ public class Employee {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(max = 20, message = "First name cannot exceed 20 characters")
     @NotBlank
-    private String firstName, lastName;
+    private String  firstName;
+
+    @Size(max = 20, message = "Last name cannot exceed 20 characters")
+    @NotBlank
+    private String  lastName;
 
     @Email
     private String email;
 
     private String phone, jobTitle;
+
     private LocalDate hireDate;
+
     private Double salary;
 
     private String status; // "Active" or "Inactive"
